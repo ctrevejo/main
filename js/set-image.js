@@ -26,7 +26,6 @@ AFRAME.registerComponent('set-image', {
       setTimeout(function () {
         // Set image.
 		  data.target.setAttribute('material', 'src', data.src);
-		  data.target.setAttribute('visible', true);
 		  data.target2.setAttribute('visible', true);
 		  document.getElementById("cursor").setAttribute('raycaster', 'objects: .closeButton');
       }, data.dur);
@@ -68,8 +67,6 @@ AFRAME.registerComponent('close-image', {
     var el = this.el;
 	  
     el.addEventListener(data.on, function () {
-    	el.setAttribute('visible', false);
-		data.target.setAttribute('material', 'src', '');
 		data.target.setAttribute('visible', false);
 		document.getElementById("cursor").setAttribute('raycaster', 'objects: .link');
     });

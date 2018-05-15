@@ -16,7 +16,7 @@
 	<a-scene>
 		<a-assets>
 			<img id="texture" src="textures/floor.jpg">
-			<img id="texture-wall" src="img/Fondo-01.jpg">
+			<img id="texture-wall" src="img/Fondo-01.png">
 			<img id="texture-lights" src="img/Fondo-lights.png">
 			<img id="pintura1" src="img/vangooh_1.jpg">
 			<img id="pintura2" src="img/vangooh_autoretrato.jpg">
@@ -65,7 +65,7 @@
 				event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	event-set__2="_event: mouseup; scale: 1 1 1"            	
             	event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#pintura-details-close; src: #pintura1"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura1"
 				 sound="on: click; src: #click-sound">
 		</a-plane>
 		
@@ -74,7 +74,7 @@
 				 event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	 event-set__2="_event: mouseup; scale: 1 1 1"            	
             	 event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#pintura-details-close; src: #pintura2"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura2"
 				 ></a-plane>
 		
 		<a-plane class="link picture" position="3.63 3.61 -4" rotation="0 0 0" width="2.8" height="1.56" src="#pintura3" 
@@ -82,16 +82,24 @@
 				 event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	 event-set__2="_event: mouseup; scale: 1 1 1"            	
             	 event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#pintura-details-close; src: #pintura3"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura3"
 				 ></a-plane>
 		
-		<a-plane id="pintura-details" src="" position="0.1 3.6 -1" width="8" height="8" visible="false">
-			
-		</a-plane>
 		
-		<a-plane class="closeButton" id="pintura-details-close" src="#close" position="2.8 6.1 0" visible="false" width="0.5" height="0.5" opacity="0.99"
-				 close-image="on: click; target: #pintura-details">
-		</a-plane>
+		<a-entity id="modal-details" visible="false" position="0.1 3.6 0">
+			<a-plane class="closeButton" id="pintura-details-close" src="#close" position="1.8 1.8 0.7" width="0.4" height="0.4" 
+				opacity="0.99"
+				close-image="on: click; target: #modal-details"
+				sound="on: click; src: #click-sound">
+			</a-plane>
+			<a-plane id="modal-background" position="0.1 3.6 0" width="100%" height="100%" color="black" opacity="0.45">
+			</a-plane>
+			<a-plane id="pintura-details" src="" position="0 0 0.5" width="4.5%" height="4.5%">
+			</a-plane>
+			<a-entity text="value: Hello World;"></a-entity>
+		</a-entity>
+		
+		
 
     </a-scene>
 </body>
