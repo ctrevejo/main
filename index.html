@@ -65,7 +65,7 @@
 				event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	event-set__2="_event: mouseup; scale: 1 1 1"            	
             	event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura1"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura1; legend: La noche estrellada"
 				 sound="on: click; src: #click-sound">
 		</a-plane>
 		
@@ -74,7 +74,7 @@
 				 event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	 event-set__2="_event: mouseup; scale: 1 1 1"            	
             	 event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura2"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura2; legend: Autorretrato"
 				 ></a-plane>
 		
 		<a-plane class="link picture" position="3.63 3.61 -4" rotation="0 0 0" width="2.8" height="1.56" src="#pintura3" 
@@ -82,12 +82,12 @@
 				 event-set__1="_event: mousedown; scale: 1.1 1.1 1.1"
             	 event-set__2="_event: mouseup; scale: 1 1 1"            	
             	 event-set__4="_event: mouseleave; scale: 1 1 1"
-				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura3"
+				 set-image="on: click; target: #pintura-details; target2:#modal-details; src: #pintura3; legend: El dormitorio en Arles"
 				 ></a-plane>
 		
 		
 		<a-entity id="modal-details" visible="false" position="0.1 3.6 0">
-			<a-plane class="closeButton" id="pintura-details-close" src="#close" position="1.8 1.8 0.7" width="0.4" height="0.4" 
+			<a-plane class="closeButton" src="#close" position="1.8 1.8 0.7" width="0.4" height="0.4" 
 				opacity="0.99"
 				close-image="on: click; target: #modal-details"
 				sound="on: click; src: #click-sound">
@@ -96,7 +96,8 @@
 			</a-plane>
 			<a-plane id="pintura-details" src="" position="0 0 0.5" width="4.5%" height="4.5%">
 			</a-plane>
-			<a-entity text="value: Hello World;"></a-entity>
+			<a-entity id="pintura-legend" text="color: white; width: 4.5; align: center; value: test" position="0 -1.9 0.7" 
+					  geometry="primitive: plane; width:4; height:0.3" material="color: #000;opacity:0.85"></a-entity>
 		</a-entity>
 		
 		

@@ -9,6 +9,7 @@ AFRAME.registerComponent('set-image', {
     on: {type: 'string'},
     target: {type: 'selector'},
 	target2: {type: 'selector'},
+	legend: {type: 'string'},
     src: {type: 'string'},
     dur: {type: 'number', default: 300}
   },
@@ -28,6 +29,7 @@ AFRAME.registerComponent('set-image', {
 		  data.target.setAttribute('material', 'src', data.src);
 		  data.target2.setAttribute('visible', true);
 		  document.getElementById("cursor").setAttribute('raycaster', 'objects: .closeButton');
+		  document.getElementById("pintura-legend").setAttribute('text', "color: white; width: 4.5; align: center; value: " + data.legend);
       }, data.dur);
     });
   },
