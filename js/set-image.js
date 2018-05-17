@@ -6,12 +6,12 @@
  */
 AFRAME.registerComponent('set-image', {
   schema: {
-    on: {type: 'string'},
-    target: {type: 'selector'},
-	target2: {type: 'selector'},
-	legend: {type: 'string'},
-    src: {type: 'string'},
-    dur: {type: 'number', default: 300}
+    on: { type: 'string' },
+    target: { type: 'selector' },
+    target2: { type: 'selector' },
+    legend: { type: 'string' },
+    src: { type: 'string' },
+    dur: { type: 'number', default: 300 }
   },
 
   init: function () {
@@ -26,10 +26,10 @@ AFRAME.registerComponent('set-image', {
       // Wait for fade to complete.
       setTimeout(function () {
         // Set image.
-		  data.target.setAttribute('material', 'src', data.src);
-		  data.target2.setAttribute('visible', true);
-		  document.getElementById("cursor").setAttribute('raycaster', 'objects: .closeButton');
-		  document.getElementById("pintura-legend").setAttribute('text', "color: white; width: 4.5; align: center; value: " + data.legend);
+        data.target.setAttribute('material', 'src', data.src);
+        data.target2.setAttribute('visible', true);
+        document.getElementById("cursor").setAttribute('raycaster', 'objects: .closeButton');
+        document.getElementById("pintura-legend").setAttribute('text', "color: white; width: 4.5; align: center; value: " + data.legend);
       }, data.dur);
     });
   },
@@ -60,17 +60,17 @@ AFRAME.registerComponent('set-image', {
 
 AFRAME.registerComponent('close-image', {
   schema: {
-    on: {type: 'string'},
-    target: {type: 'selector'}
+    on: { type: 'string' },
+    target: { type: 'selector' }
   },
 
   init: function () {
     var data = this.data;
     var el = this.el;
-	  
+
     el.addEventListener(data.on, function () {
-		data.target.setAttribute('visible', false);
-		document.getElementById("cursor").setAttribute('raycaster', 'objects: .link');
+      data.target.setAttribute('visible', false);
+      document.getElementById("cursor").setAttribute('raycaster', 'objects: .link');
     });
   }
 });
